@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="settings_comp_plays_first_labels">
+        <item>@string/settings_comp_plays_first_true_label</item>
+        <item>@string/settings_comp_plays_first_false_label</item>
+    </string-array>
+
+    <string-array name="settings_comp_plays_first_values">
+        <item>@string/settings_comp_plays_first_true_value</item>
+        <item>@string/settings_comp_plays_first_false_value</item>
+    </string-array>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/settings">
+
+    <PreferenceCategory android:title="@string/game_settings" />
+
+    <ListPreference
+        android:defaultValue="@string/settings_comp_plays_first_default"
+        android:entries="@array/settings_comp_plays_first_labels"
+        android:entryValues="@array/settings_comp_plays_first_values"
+        android:key="@string/settings_comp_plays_first_key"
+        android:title="@string/settings_comp_plays_first_label" />
+
+</PreferenceScreen>
