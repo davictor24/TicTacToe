@@ -100,16 +100,19 @@ public class ComputerVsComputerActivity extends AppCompatActivity {
         mGridSquares.clear();
         mBoard = null;
         mPlayAgainButton.setVisibility(View.INVISIBLE);
+        if (mHandler != null) mHandler.postDelayed(mRunnable, 1000);
         mHandler = null;
         mRunnable = null;
     }
 
     private void think() {
         mToPlayTextView.setText(getResources().getString((mGameCounter % 2 == 1) ? R.string.computer_1_thinking : R.string.computer_2_thinking));
-        Move move = Minimax.getMove(mBoard, ((mGameCounter % 2 == 1) ? 1 : 2));
-        clicked(move.getX(), move.getY());
-        if (Minimax.checkWin(mBoard, 1) == 0 && mBoard.getCounter() < Math.pow(mGridSize, 2))
-            mToPlayTextView.setText(getResources().getString((mGameCounter % 2 == 1) ? R.string.computer_1_thinking : R.string.computer_2_thinking));
+        if (mBoard != null) {
+            Move move = Minimax.getMove(mBoard, ((mGameCounter % 2 == 1) ? 1 : 2));
+            clicked(move.getX(), move.getY());
+            if (Minimax.checkWin(mBoard, 1) == 0 && mBoard.getCounter() < Math.pow(mGridSize, 2))
+                mToPlayTextView.setText(getResources().getString((mGameCounter % 2 == 1) ? R.string.computer_1_thinking : R.string.computer_2_thinking));
+        }
     }
 
     private void clicked(int x, int y) {

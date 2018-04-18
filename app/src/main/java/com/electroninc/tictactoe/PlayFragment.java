@@ -1,9 +1,11 @@
 package com.electroninc.tictactoe;
 
+import android.app.ActivityOptions;
+import android.app.Fragment;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +40,9 @@ public class PlayFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), SetupActivity.class);
                 intent.putExtra(SetupActivity.GAMETYPE, SetupActivity.GAMETYPE1);
-                startActivity(intent);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+                    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
+                else startActivity(intent);
             }
         });
 
@@ -47,7 +51,9 @@ public class PlayFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), SetupActivity.class);
                 intent.putExtra(SetupActivity.GAMETYPE, SetupActivity.GAMETYPE2);
-                startActivity(intent);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+                    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
+                else startActivity(intent);
             }
         });
 
@@ -56,7 +62,9 @@ public class PlayFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), SetupActivity.class);
                 intent.putExtra(SetupActivity.GAMETYPE, SetupActivity.GAMETYPE3);
-                startActivity(intent);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+                    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
+                else startActivity(intent);
             }
         });
 
@@ -65,7 +73,9 @@ public class PlayFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), SetupActivity.class);
                 intent.putExtra(SetupActivity.GAMETYPE, SetupActivity.GAMETYPE4);
-                startActivity(intent);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+                    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
+                else startActivity(intent);
             }
         });
 

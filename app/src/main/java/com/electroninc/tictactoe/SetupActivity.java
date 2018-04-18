@@ -1,9 +1,12 @@
 package com.electroninc.tictactoe;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Fade;
 import android.view.View;
+import android.view.Window;
 import android.widget.TextView;
 
 public class SetupActivity extends AppCompatActivity {
@@ -20,6 +23,14 @@ public class SetupActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+            Fade fadeAnimation = new Fade();
+            fadeAnimation.setDuration(300);
+            getWindow().setEnterTransition(fadeAnimation);
+        }
+
         setContentView(R.layout.activity_setup);
 
         mGametype = getIntent().getStringExtra(GAMETYPE);

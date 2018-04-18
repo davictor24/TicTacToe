@@ -19,7 +19,6 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="@string/tic_tac_toe"
-        android:textColor="@color/colorPrimaryDark"
         android:textSize="40sp"
         android:layout_marginBottom="16dp"
         android:textStyle="bold" />
@@ -31,6 +30,6 @@
         android:text="@string/loading"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="32dp"/>
+        android:layout_marginBottom="32dp" />
 
 </RelativeLayout>
